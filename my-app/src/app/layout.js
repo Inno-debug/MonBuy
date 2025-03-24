@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavContainer from "./Components/Header/navContainer";
+import ClientComponent from "./clientComponent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +21,14 @@ export const metadata = {
 export default function RootLayout() {
   return (
     <html lang="en">
+      <head>
+        <title>MonBuy</title>
+        <link rel="icon" href="./favicon.ico" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden`}
       >
+        <ClientComponent />
         <header>
           <nav>
             <NavContainer />
